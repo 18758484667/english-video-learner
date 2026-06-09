@@ -1,4 +1,4 @@
-FROM python:3.12-slim
+FROM python:3.11-slim
 
 # 安装 FFmpeg、构建工具、PostgreSQL 开发库和 PyAV 编译依赖
 RUN apt-get update && apt-get install -y --no-install-recommends \
