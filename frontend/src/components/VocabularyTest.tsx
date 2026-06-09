@@ -35,7 +35,7 @@ const VocabularyTest: React.FC = () => {
     setLoading(true)
     try {
       // 尝试调用后端API
-      const response = await axios.post('http://localhost:8000/api/tests/start/', {
+      const response = await axios.post('https://dull-zoos-melt.loca.lt/api/tests/start/', {
         user_id: user.id,
         test_type: 'vocabulary'
       }, { timeout: 2000 })
@@ -110,7 +110,7 @@ const VocabularyTest: React.FC = () => {
     setLoading(true)
     try {
       // 尝试调用后端API
-      const response = await axios.post('http://localhost:8000/api/tests/submit/', {
+      const response = await axios.post('https://dull-zoos-melt.loca.lt/api/tests/submit/', {
         user_id: user.id,
         test_type: 'vocabulary',
         answers: finalAnswers

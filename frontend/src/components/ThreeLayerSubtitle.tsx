@@ -21,7 +21,7 @@ interface ThreeLayerSubtitleProps {
   currentTime?: number
 }
 
-const API_BASE_URL = 'http://localhost:8000/api'
+const API_BASE_URL = 'https://dull-zoos-melt.loca.lt/api'
 
 // 词形还原：将时态变化还原为原形
 const normalizeWord = (word: string): string => {

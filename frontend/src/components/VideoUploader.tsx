@@ -55,7 +55,7 @@ const VideoUploader: React.FC = () => {
 
       // 上传文件
       const uploadResponse = await axios.post(
-        `http://localhost:8000/api/videos/upload/?user_id=${user.id}&user_level=${user.cefr_level}`,
+        `https://dull-zoos-melt.loca.lt/api/videos/upload/?user_id=${user.id}&user_level=${user.cefr_level}`,
         formData,
         {
           headers: {
@@ -111,7 +111,7 @@ const VideoUploader: React.FC = () => {
       })
 
       const response = await axios.post(
-        'http://localhost:8000/api/videos/download-url/',
+        'https://dull-zoos-melt.loca.lt/api/videos/download-url/',
         {
           url: videoUrl.trim(),
           user_id: user.id,
@@ -154,7 +154,7 @@ const VideoUploader: React.FC = () => {
       if (!isChecking) return
       
       try {
-        const response = await axios.get(`http://localhost:8000/api/videos/${id}`)
+        const response = await axios.get(`https://dull-zoos-melt.loca.lt/api/videos/${id}`)
         const { status, subtitle_data, error_message, current_step, total_steps, step_name } = response.data
 
         if (status === 'completed') {
@@ -166,7 +166,7 @@ const VideoUploader: React.FC = () => {
             const data = JSON.parse(subtitle_data)
             setSubtitles(data.subtitles)
             // 设置视频URL（如果有视频则优先视频，否则音频）
-            setCurrentVideoUrl(`http://localhost:8000/api/videos/file/${id}`)
+            setCurrentVideoUrl(`https://dull-zoos-melt.loca.lt/api/videos/file/${id}`)
             
             setUploadProgress({
               status: 'completed',
@@ -199,7 +199,7 @@ const VideoUploader: React.FC = () => {
               const data = JSON.parse(subtitle_data)
               setSubtitles(data.subtitles)
               // 设置音频播放URL
-              setCurrentVideoUrl(`http://localhost:8000/api/videos/audio/${id}`)
+              setCurrentVideoUrl(`https://dull-zoos-melt.loca.lt/api/videos/audio/${id}`)
               audioReady = true
             } catch (e) {
               console.error('Failed to parse subtitle data:', e)

@@ -21,7 +21,7 @@ interface StatsData {
   level_stats: Record<string, number>
 }
 
-const API_BASE_URL = 'http://localhost:8000/api'
+const API_BASE_URL = 'https://dull-zoos-melt.loca.lt/api'
 const CEFR_LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']
 
 const VocabularyList: React.FC = () => {

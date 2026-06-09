@@ -19,7 +19,7 @@ interface CardResult {
   status: 'mastered' | 'review'
 }
 
-const API_BASE_URL = 'http://localhost:8000/api'
+const API_BASE_URL = 'https://dull-zoos-melt.loca.lt/api'
 
 const FlashCard: React.FC = () => {
   const { user } = useAppStore()

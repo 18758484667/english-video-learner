@@ -10,3 +10,10 @@ __pycache__/
 dist/
 build/
 .vercel-tmp/
+
+# Data and uploads
+uploads/
+data/
+*.db
+*.sqlite
+*.sqlite3
