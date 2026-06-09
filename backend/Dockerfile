@@ -1,18 +1,8 @@
-FROM python:3.11-slim
+FROM python:3.12-slim
 
-# 安装 FFmpeg、构建工具、PostgreSQL 开发库和 PyAV 编译依赖
+# 安装 FFmpeg（openai-whisper 只需要 FFmpeg 二进制，不需要 PyAV）
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ffmpeg \
-    build-essential \
-    libpq-dev \
-    pkg-config \
-    libavformat-dev \
-    libavcodec-dev \
-    libavutil-dev \
-    libswscale-dev \
-    libavdevice-dev \
-    libavfilter-dev \
-    libswresample-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # 设置工作目录
@@ -21,9 +11,7 @@ WORKDIR /app
 # 复制依赖文件并安装
 COPY requirements.txt .
 RUN pip install --upgrade pip
-# 先单独安装 av 11.x（支持 FFmpeg 6.0+，有预编译 wheel）
-RUN pip install --no-cache-dir av==11.0.0 || pip install --no-cache-dir av==12.0.0
-RUN pip install --prefer-binary --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # 复制应用代码
 COPY . .

@@ -34,7 +34,7 @@ def fix_contractions(text: str) -> str:
 
 
 class Transcriber:
-    """视频转录服务 - 使用faster-whisper"""
+    """视频转录服务 - 使用 openai-whisper"""
 
     # 常见的 FFmpeg 安装路径
     FFMPEG_PATHS = [
@@ -67,17 +67,12 @@ class Transcriber:
     def load_model(self):
         """加载Whisper模型"""
         try:
-            from faster_whisper import WhisperModel
+            import whisper
 
-            # device="cuda" for GPU, "cpu" for CPU
-            self.model = WhisperModel(
-                self.model_size,
-                device="auto",
-                compute_type="int8"  # 量化加速
-            )
+            self.model = whisper.load_model(self.model_size)
             print(f"Whisper model '{self.model_size}' loaded successfully")
         except ImportError:
-            print("faster-whisper not installed. Using mock transcription.")
+            print("openai-whisper not installed. Using mock transcription.")
             self.model = None
         except Exception as e:
             print(f"Failed to load Whisper model (network issue or missing files): {e}")
@@ -105,42 +100,40 @@ class Transcriber:
         try:
             print(f"[Transcriber] Starting transcription of: {audio_path}")
             print(f"[Transcriber] Model: {self.model_size}, Language: {language}")
-            
-            segments, info = self.model.transcribe(
+
+            result = self.model.transcribe(
                 audio_path,
                 language=language,
-                beam_size=5,
                 word_timestamps=True  # 启用单词级时间戳
             )
 
-            result = {
-                "language": info.language,
-                "segments": []
-            }
-
+            segments = []
             segment_count = 0
-            for segment in segments:
+            for seg in result.get("segments", []):
                 # 修复 Whisper 拆开的缩写
-                fixed_text = fix_contractions(segment.text.strip())
-                result["segments"].append({
-                    "start": segment.start,
-                    "end": segment.end,
+                fixed_text = fix_contractions(seg.get("text", "").strip())
+                words = []
+                for w in seg.get("words", []):
+                    words.append({
+                        "word": w.get("word", ""),
+                        "start": w.get("start", 0.0),
+                        "end": w.get("end", 0.0)
+                    })
+                segments.append({
+                    "start": seg.get("start", 0.0),
+                    "end": seg.get("end", 0.0),
                     "text": fixed_text,
-                    "words": [
-                        {
-                            "word": w.word,
-                            "start": w.start,
-                            "end": w.end
-                        }
-                        for w in (segment.words or [])
-                    ]
+                    "words": words
                 })
                 segment_count += 1
                 if segment_count % 10 == 0:
                     print(f"[Transcriber] Processed {segment_count} segments...")
 
             print(f"[Transcriber] Transcription complete: {segment_count} segments")
-            return result
+            return {
+                "language": result.get("language", language),
+                "segments": segments
+            }
 
         except Exception as e:
             print(f"[Transcriber] Transcription error: {e}")
