@@ -10,6 +10,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libavcodec-dev \
     libavutil-dev \
     libswscale-dev \
+    libavdevice-dev \
+    libavfilter-dev \
+    libswresample-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # 设置工作目录
