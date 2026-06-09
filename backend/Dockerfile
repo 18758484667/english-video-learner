@@ -1,10 +1,15 @@
 FROM python:3.12-slim
 
-# 安装 FFmpeg、构建工具和 PostgreSQL 开发库
+# 安装 FFmpeg、构建工具、PostgreSQL 开发库和 PyAV 编译依赖
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ffmpeg \
     build-essential \
     libpq-dev \
+    pkg-config \
+    libavformat-dev \
+    libavcodec-dev \
+    libavutil-dev \
+    libswscale-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # 设置工作目录
