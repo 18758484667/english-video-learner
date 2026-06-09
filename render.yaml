@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: english-video-learner
+    runtime: docker
+    repo: https://github.com/18758484667/english-video-learner
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: DATABASE_URL
+        value: sqlite:///app/data/app.db
+    disk:
+      name: data
+      mountPath: /app/data
+      sizeGB: 1
+    healthCheckPath: /api/health
