@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 import { useAppStore } from '../store/useStore'
+import { API_BASE_URL } from '../config'
 
 interface VideoProcess {
   id: number
@@ -45,7 +46,7 @@ const DownloadQueue: React.FC = () => {
     if (!user) return
 
     try {
-      const response = await axios.get(`https://dull-zoos-melt.loca.lt/api/videos/user/${user.id}`)
+      const response = await axios.get(`${API_BASE_URL}/api/videos/user/${user.id}`)
       const allVideos: VideoProcess[] = response.data
 
       // 过滤出正在处理中的视频（非 completed 和 failed）

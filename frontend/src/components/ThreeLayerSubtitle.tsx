@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useAppStore } from '../store/useStore'
+import { API_BASE_URL } from '../config'
 import axios from 'axios'
 import nlp from 'compromise'
 
@@ -21,7 +22,7 @@ interface ThreeLayerSubtitleProps {
   currentTime?: number
 }
 
-const API_BASE_URL = 'https://dull-zoos-melt.loca.lt/api'
+const BASE_URL = `${API_BASE_URL}/api`
 
 // 词形还原：将时态变化还原为原形
 const normalizeWord = (word: string): string => {

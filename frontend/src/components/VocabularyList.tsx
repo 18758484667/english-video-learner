@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useAppStore } from '../store/useStore'
+import { API_BASE_URL } from '../config'
 
 interface VocabularyItem {
   id: number
@@ -21,7 +22,7 @@ interface StatsData {
   level_stats: Record<string, number>
 }
 
-const API_BASE_URL = 'https://dull-zoos-melt.loca.lt/api'
+const BASE_URL = `${API_BASE_URL}/api`
 const CEFR_LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']
 
 const VocabularyList: React.FC = () => {

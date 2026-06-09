@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import axios from 'axios'
 import { useAppStore } from '../store/useStore'
+import { API_BASE_URL } from '../config'
 
 interface VocabularyItem {
   id: number
@@ -19,7 +20,7 @@ interface CardResult {
   status: 'mastered' | 'review'
 }
 
-const API_BASE_URL = 'https://dull-zoos-melt.loca.lt/api'
+const BASE_URL = `${API_BASE_URL}/api`
 
 const FlashCard: React.FC = () => {
   const { user } = useAppStore()

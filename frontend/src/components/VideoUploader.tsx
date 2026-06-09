@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react'
 import axios from 'axios'
 import { useAppStore } from '../store/useStore'
+import { API_BASE_URL } from '../config'
 
 interface UploadProgress {
   status: 'idle' | 'uploading' | 'downloading' | 'processing' | 'completed' | 'error' | 'downloading_audio' | 'processing_audio' | 'downloading_video'
@@ -55,7 +56,7 @@ const VideoUploader: React.FC = () => {
 
       // 上传文件
       const uploadResponse = await axios.post(
-        `https://dull-zoos-melt.loca.lt/api/videos/upload/?user_id=${user.id}&user_level=${user.cefr_level}`,
+        `${API_BASE_URL}/api/videos/upload/?user_id=${user.id}&user_level=${user.cefr_level}`,
         formData,
         {
           headers: {
@@ -111,7 +112,7 @@ const VideoUploader: React.FC = () => {
       })
 
       const response = await axios.post(
-        'https://dull-zoos-melt.loca.lt/api/videos/download-url/',
+        `${API_BASE_URL}/api/videos/download-url/`,
         {
           url: videoUrl.trim(),
           user_id: user.id,
@@ -154,7 +155,7 @@ const VideoUploader: React.FC = () => {
       if (!isChecking) return
       
       try {
-        const response = await axios.get(`https://dull-zoos-melt.loca.lt/api/videos/${id}`)
+        const response = await axios.get(`${API_BASE_URL}/api/videos/${id}`)
         const { status, subtitle_data, error_message, current_step, total_steps, step_name } = response.data
 
         if (status === 'completed') {
@@ -166,7 +167,7 @@ const VideoUploader: React.FC = () => {
             const data = JSON.parse(subtitle_data)
             setSubtitles(data.subtitles)
             // 设置视频URL（如果有视频则优先视频，否则音频）
-            setCurrentVideoUrl(`https://dull-zoos-melt.loca.lt/api/videos/file/${id}`)
+            setCurrentVideoUrl(`${API_BASE_URL}/api/videos/file/${id}`)
             
             setUploadProgress({
               status: 'completed',
@@ -199,7 +200,7 @@ const VideoUploader: React.FC = () => {
               const data = JSON.parse(subtitle_data)
               setSubtitles(data.subtitles)
               // 设置音频播放URL
-              setCurrentVideoUrl(`https://dull-zoos-melt.loca.lt/api/videos/audio/${id}`)
+              setCurrentVideoUrl(`${API_BASE_URL}/api/videos/audio/${id}`)
               audioReady = true
             } catch (e) {
               console.error('Failed to parse subtitle data:', e)
