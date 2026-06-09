@@ -20,7 +20,7 @@ WORKDIR /app
 
 # 复制依赖文件并安装
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --prefer-binary --no-cache-dir -r requirements.txt
 
 # 复制应用代码
 COPY . .
