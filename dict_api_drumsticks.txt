@@ -1,0 +1,40 @@
+[
+  {
+    "word": "drumsticks",
+    "phonetics": [],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "A stick used to play drums.",
+            "synonyms": [],
+            "antonyms": []
+          },
+          {
+            "definition": "The second joint of the legbone of a chicken or other fowl, especially as an item of food.",
+            "synonyms": [],
+            "antonyms": []
+          },
+          {
+            "definition": "The moringa or drumstick tree, Moringa oleifera, especially its slender, cylindrical pods.",
+            "synonyms": [],
+            "antonyms": []
+          }
+        ],
+        "synonyms": [
+          "chicken leg"
+        ],
+        "antonyms": []
+      }
+    ],
+    "license": {
+      "name": "CC BY-SA 3.0",
+      "url": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "sourceUrls": [
+      "https://en.wiktionary.org/wiki/drumstick",
+      "https://en.wiktionary.org/wiki/drumsticks"
+    ]
+  }
+]

@@ -1,0 +1,20 @@
+word: specific
+  phonetic: '/spəsɪfɪk/'
+  meaning: '特定的'
+  example: None
+
+word: hello
+  phonetic: '/həloʊ/'
+  meaning: '“你好！”或类似的问候语。'
+  example: None
+
+word: world
+  phonetic: '/wɜrld/'
+  meaning: '（带“the”）人类集体存在；一般的存在。'
+  example: None
+
+word: drumsticks
+  phonetic: None
+  meaning: '用来打鼓的棍子。'
+  example: '(noun) A stick used to play drums.'
+

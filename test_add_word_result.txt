@@ -1,0 +1,5 @@
+word: drumsticks
+phonetic: None
+meaning: '用来打鼓的棍子。'
+cefr_level: None
+example_sentence: '(noun) A stick used to play drums.'

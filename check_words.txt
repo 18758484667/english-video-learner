@@ -1,0 +1,16 @@
+word=analysis
+  phonetic='/ənæləsəs/'
+  meaning='分析'
+
+word=hello
+  phonetic='/həloʊ/'
+  meaning=None
+
+word=specific
+  phonetic='/spəsɪfɪk/'
+  meaning='特定的'
+
+word=world
+  phonetic='/wɜrld/'
+  meaning=None
+

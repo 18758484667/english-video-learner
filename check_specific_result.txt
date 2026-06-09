@@ -1,0 +1,8 @@
+word=specific
+phonetic='/spəsɪfɪk/'
+phonetic bytes=b'/sp\xc9\x99s\xc9\xaaf\xc9\xaak/'
+meaning='特定的'
+meaning bytes=b'\xe7\x89\xb9\xe5\xae\x9a\xe7\x9a\x84'
+
+JSON ensure_ascii=False: {"word": "specific", "phonetic": "/spəsɪfɪk/", "meaning": "特定的"}
+JSON ensure_ascii=True: {"word": "specific", "phonetic": "/sp\u0259s\u026af\u026ak/", "meaning": "\u7279\u5b9a\u7684"}

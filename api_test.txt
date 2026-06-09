@@ -1,0 +1,4 @@
+phonetic repr='/spəsɪfɪk/'
+meaning repr='特定的'
+phonetic=/spəsɪfɪk/
+meaning=特定的

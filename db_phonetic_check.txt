@@ -1,0 +1,23 @@
+=== 有音标的数据示例 ===
+word=cattle, phonetic='/kætəl/', meaning=None
+word=clothes, phonetic='/kloʊðz/', meaning=None
+word=albeit, phonetic='/ɔlbiɪt/', meaning=None
+word=although, phonetic='/ɔlðoʊ/', meaning=None
+word=and, phonetic='/ənd/', meaning=None
+word=as, phonetic='/æz/', meaning=None
+word=because, phonetic='/bɪkɔz/', meaning=None
+word=but, phonetic='/bət/', meaning=None
+word=close, phonetic='/kloʊs/', meaning=None
+word=after, phonetic='/æftɜr/', meaning=None
+
+=== drumsticks 数据 ===
+drumsticks 不在 vocabulary_levels 表中
+
+总词数: 9809
+有音标的词数: 6501
+有释义的词数: 4686
+
+=== 音标原始字节 ===
+word=cattle, phonetic=/kætəl/, bytes=b'/k\xc3\xa6t\xc9\x99l/'
+word=clothes, phonetic=/kloʊðz/, bytes=b'/klo\xca\x8a\xc3\xb0z/'
+word=albeit, phonetic=/ɔlbiɪt/, bytes=b'/\xc9\x94lbi\xc9\xaat/'

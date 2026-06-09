@@ -1,0 +1,409 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fallback styles if Tailwind doesn't load */
+.login-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a202c 0%, #2c5282 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.login-box {
+  background-color: #2d3748;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  max-width: 28rem;
+  width: 100%;
+}
+
+.login-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.login-subtitle {
+  color: #a0aec0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #4a5568;
+  color: white;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  margin-bottom: 1rem;
+}
+
+.input-field:focus {
+  box-shadow: 0 0 0 2px #4299e1;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #3182ce;
+  color: white;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #2b6cb0;
+}
+
+/* Header styles */
+.header {
+  background-color: #2d3748;
+  border-bottom: 1px solid #4a5568;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* Navigation tabs */
+.nav-tabs {
+  background-color: #2d3748;
+  border-bottom: 1px solid #4a5568;
+}
+
+.nav-tabs-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tab-button {
+  padding: 0.75rem 1.5rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+.tab-button.active {
+  background-color: #3182ce;
+  color: white;
+}
+
+.tab-button:not(.active) {
+  color: #a0aec0;
+}
+
+.tab-button:not(.active):hover {
+  color: white;
+}
+
+/* Main content */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Video player */
+.video-player-container {
+  width: 100%;
+}
+
+.subtitle-display-area {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  background-color: #1a202c;
+  border-radius: 0.5rem;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subtitle-container {
+  width: 100%;
+  text-align: center;
+}
+
+.annotation-layer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 0.25rem;
+  min-height: 28px;
+}
+
+.english-layer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.translation-layer {
+  margin-top: 0.5rem;
+}
+
+.control-buttons {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.control-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.control-btn:hover {
+  opacity: 0.8;
+}
+
+.control-btn.blue {
+  background-color: #3182ce;
+  color: white;
+}
+
+.control-btn.green {
+  background-color: #38a169;
+  color: white;
+}
+
+.control-btn.purple {
+  background-color: #805ad5;
+  color: white;
+}
+
+.control-btn.gray {
+  background-color: #4a5568;
+  color: white;
+}
+
+.playback-rate-control {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.rate-btn {
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+}
+
+.rate-btn.active {
+  background-color: #3182ce;
+  color: white;
+}
+
+.rate-btn:not(.active) {
+  background-color: #4a5568;
+  color: white;
+}
+
+/* Vocabulary test */
+.test-container,
+.test-start,
+.test-result {
+  padding: 2rem;
+  background-color: #2d3748;
+  border-radius: 0.5rem;
+}
+
+.test-progress-bar {
+  width: 100%;
+  height: 0.5rem;
+  background-color: #4a5568;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.test-progress-fill {
+  height: 100%;
+  background-color: #3182ce;
+  transition: width 0.3s;
+}
+
+.question-word {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.option-button {
+  padding: 1rem;
+  background-color: #4a5568;
+  color: white;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-align: left;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.option-button:hover {
+  background-color: #718096;
+}
+
+/* Vocabulary list */
+.vocabulary-list {
+  padding: 1.5rem;
+  background-color: #2d3748;
+  border-radius: 0.5rem;
+}
+
+.vocab-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.vocab-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.vocab-card {
+  background-color: #4a5568;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+.vocab-card:hover {
+  background-color: #718096;
+}
+
+.vocab-word {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.vocab-phonetic {
+  color: #a0aec0;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.vocab-meaning {
+  color: #90cdf4;
+  margin-bottom: 0.5rem;
+}
+
+.vocab-level {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background-color: #3182ce;
+  color: white;
+  font-size: 0.75rem;
+  border-radius: 0.25rem;
+}
+
+.vocab-example {
+  color: #a0aec0;
+  font-size: 0.875rem;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: #fc8181;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.vocab-card:hover .delete-btn {
+  opacity: 1;
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Flash Card 3D Transform Classes */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}

@@ -1,0 +1,55 @@
+{
+  "sentence": "The craftsman made a beautiful box.",
+  "words": [
+    {
+      "word": "The",
+      "level": "A1",
+      "is_beyond": false,
+      "meaning": null,
+      "phonetic": "/ðə/",
+      "example": "The book is on the table."
+    },
+    {
+      "word": "craftsman",
+      "level": "unknown",
+      "is_beyond": true,
+      "meaning": "工匠",
+      "phonetic": null,
+      "example": null
+    },
+    {
+      "word": "made",
+      "level": "unknown",
+      "is_beyond": true,
+      "meaning": "制造",
+      "phonetic": null,
+      "example": null
+    },
+    {
+      "word": "a",
+      "level": "unknown",
+      "is_beyond": true,
+      "meaning": "一",
+      "phonetic": null,
+      "example": null
+    },
+    {
+      "word": "beautiful",
+      "level": "unknown",
+      "is_beyond": true,
+      "meaning": "美丽的",
+      "phonetic": null,
+      "example": null
+    },
+    {
+      "word": "box",
+      "level": "unknown",
+      "is_beyond": true,
+      "meaning": "盒子",
+      "phonetic": null,
+      "example": null
+    }
+  ],
+  "total_words": 6,
+  "unknown_words": 5
+}
