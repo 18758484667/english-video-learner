@@ -1,8 +1,10 @@
 FROM python:3.12-slim
 
-# 安装 FFmpeg 和系统依赖
+# 安装 FFmpeg、构建工具和 PostgreSQL 开发库
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ffmpeg \
+    build-essential \
+    libpq-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # 设置工作目录
