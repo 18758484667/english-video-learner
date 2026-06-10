@@ -22,7 +22,6 @@ interface ThreeLayerSubtitleProps {
   currentTime?: number
 }
 
-const BASE_URL = `${API_BASE_URL}/api`
 
 // 词形还原：将时态变化还原为原形
 const normalizeWord = (word: string): string => {

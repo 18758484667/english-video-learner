@@ -20,7 +20,6 @@ interface CardResult {
   status: 'mastered' | 'review'
 }
 
-const BASE_URL = `${API_BASE_URL}/api`
 
 const FlashCard: React.FC = () => {
   const { user } = useAppStore()
