@@ -220,5 +220,5 @@ def get_transcriber():
     """获取转录器实例（懒加载模型）"""
     global transcriber_instance
     if transcriber_instance is None:
-        transcriber_instance = Transcriber(model_size="small")
+        transcriber_instance = Transcriber(model_size="tiny")
     return transcriber_instance
