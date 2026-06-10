@@ -213,5 +213,12 @@ class Transcriber:
         }
 
 
-# 创建全局实例（使用 small 模型，已有缓存）
-transcriber = Transcriber(model_size="small")
+# 全局实例（懒加载）
+transcriber_instance = None
+
+def get_transcriber():
+    """获取转录器实例（懒加载模型）"""
+    global transcriber_instance
+    if transcriber_instance is None:
+        transcriber_instance = Transcriber(model_size="small")
+    return transcriber_instance

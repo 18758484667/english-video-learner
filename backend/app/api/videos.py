@@ -17,7 +17,7 @@ import yt_dlp
 
 from ..database import get_db
 from ..models import VideoProcess
-from ..services.transcriber import transcriber
+from ..services.transcriber import get_transcriber
 from ..services.translator import translator
 from ..services.subtitle_formatter import convert_to_json
 from ..services.vocabulary_assessor import assessor
@@ -77,7 +77,7 @@ def process_video_task(process_id: int, media_path: str, user_level: str = "A1",
             else:
                 # 步骤1: 从视频中提取音频并转录
                 print(f"[Process {process_id}] Step 1/5: Extracting audio from video...")
-                audio_path = transcriber.extract_audio_from_video(media_path)
+                audio_path = get_transcriber().extract_audio_from_video(media_path)
                 print(f"[Process {process_id}] Audio extracted: {audio_path}")
             
             process.step_name = "Transcribing audio to text (this may take a while)..."
@@ -85,7 +85,7 @@ def process_video_task(process_id: int, media_path: str, user_level: str = "A1",
             db.commit()
             
             print(f"[Process {process_id}] Step 1/5: Transcribing audio with Whisper...")
-            transcription = transcriber.transcribe_audio(audio_path)
+            transcription = get_transcriber().transcribe_audio(audio_path)
             segments = transcription.get('segments', [])
             print(f"[Process {process_id}] Transcription complete: {len(segments)} segments")
             
