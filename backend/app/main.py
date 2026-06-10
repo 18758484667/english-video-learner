@@ -37,6 +37,7 @@ def read_root():
     return {"message": "English Video Learner API is running"}
 
 @app.get("/health")
+@app.get("/api/health")
 def health_check():
     return {"status": "healthy"}
 
